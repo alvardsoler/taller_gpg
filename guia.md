@@ -12,7 +12,9 @@ Hay diferentes tipos de cifrado, pero la aplicación que vamos a utilizar [GnuPG
 **Si el remitente usa la clave pública del destinatario para cifrar el mensaje, una vez cifrado, sólo la clave privada del destinatario podrá descifrar este mensaje, ya que es el único que la conoce. Por tanto se logra la confidencialidad del envío del mensaje, nadie salvo el destinatario puede descifrarlo**."
 
 Aquí una imágen bastante descriptiva (a mi juicio) de cómo funciona, también de la Wiki.
+
 ![firmaAsimetrica]
+
 > - David redacta un mensaje
 - David firma digitalmente el mensaje con su clave privada
 - David envía el mensaje firmado digitalmente a Ana a través de internet, ya sea por correo electrónico, mensajería instantánea o cualquier otro medio
@@ -43,6 +45,7 @@ En los repositorios de Debian tenemos Enigmail
 Ahora, si todavía no tenemos una cuenta de correo añadida a Thunderbird, deberemos introducir los datos. Thunderbird nos da la opción de crearnos un correo, pero en este taller usaremos la de la UCM.
 
 ![configEmail1]
+
 El nombre es el que se mostrará como remitente de los emails que enviemos. Clicamos en Continue.
 
 ![configEmail2]
@@ -50,12 +53,14 @@ El nombre es el que se mostrará como remitente de los emails que enviemos. Clic
 En esta ventana seleccionamos IMAP (si queremos que los correos no se descarguen en nuestra máquina, si no que accedemos a ellos de manera remota) o POP3 (que descargará todo el contenido de tu email en tu máquina). Yo elegí IMAP.
 
 ![configEmail3]
+
 Ahora ya tenemos nuestro correo electrónico configurado.
 
 ### Configuración de Enigmail
 Enigmail nos facilita un asistente para la configuración de este. Menu -> Enigmail -> Asistente de configuración.
 
 ![enigmailAsist]
+
 Elegimos la opción de usar el asistente. Ahora el asistente nos hará varías preguntas. La primera, si queremos que nuestros correos estén **cifrados** por defecto, si queremos que lo haga de manera automática o si queremos hacerlo manualmente. Vamos a elegir la tercera opción (no cifrar mis correos por defecto), ya que si ciframos todos los correos no los podrán leer quienes no tengan nuestra clave. La segunda pregunta es si queremos que nuestros correos estén **firmados**, ésto es que con nuestra clave se "marca" el correo para que se sepa que el destinatario somos realmente nosotros. Esto **no cifra** el contenido del correo, solo verifica que lo estamos enviando nosotros. Marcaremos que sí. Siempre es buena opción tener firmados nuestros correos. La tercera pregunta es si queremos que Enigmail configure nuestro correo electrónico de manera automática para que no existan problemas al firmar y codificar. Elegimos que sí.
 
 ### Crear claves

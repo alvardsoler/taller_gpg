@@ -28,12 +28,58 @@ Si no se tiene instalado Thunderbird, se puede descargar [aquí][1]. Si utilizam
 ```shell
   sudo apt-get install icedove
 ```
-### Crear claves
+Para instalar el complemento de idioma Castellano:
 
+```shell
+  sudo apt-get install icedove-l10n-es-es
+```
+### Instalar complemento Enigmail
+En los repositorios de Debian tenemos Enigmail
+```shell
+  sudo apt-get install enigmail
+```
+
+### Configurar cuenta de correo
+Ahora, si todavía no tenemos una cuenta de correo añadida a Thunderbird, deberemos introducir los datos. Thunderbird nos da la opción de crearnos un correo, pero en este taller usaremos la de la UCM.
+
+![configEmail1]
+
+El nombre es el que se mostrará como remitente de los emails que enviemos. Clicamos en Continue.
+![configEmail2]
+
+En esta ventana seleccionamos IMAP (si queremos que los correos no se descarguen en nuestra máquina, si no que accedemos a ellos de manera remota) o POP3 (que descargará todo el contenido de tu email en tu máquina). Yo elegí IMAP.
+![configEmail3]
+
+Ahora ya tenemos nuestro correo electrónico configurado.
+### Configuración de Enigmail
+Enigmail nos facilita un asistente para la configuración de este. Menu -> Enigmail -> Asistente de configuración.
+
+![enigmailAsist]
+
+Elegimos la opción de usar el asistente. Ahora el asistente nos hará varías preguntas. La primera, si queremos que nuestros correos estén **cifrados** por defecto, si queremos que lo haga de manera automática o si queremos hacerlo manualmente. Vamos a elegir la tercera opción (no cifrar mis correos por defecto), ya que si ciframos todos los correos no los podrán leer quienes no tengan nuestra clave. La segunda pregunta es si queremos que nuestros correos estén **firmados**, ésto es que con nuestra clave se "marca" el correo para que se sepa que el destinatario somos realmente nosotros. Esto **no cifra** el contenido del correo, solo verifica que lo estamos enviando nosotros. Marcaremos que sí. Siempre es buena opción tener firmados nuestros correos. La tercera pregunta es si queremos que Enigmail configure nuestro correo electrónico de manera automática para que no existan problemas al firmar y codificar. Elegimos que sí.
+### Crear claves
+Ahora el asistente nos da la opción de usar un par de claves ya generadas o crear unas nuevas. Si ya tenemos un par de claves generadas, las seleccionamso y ya estaría nuestro correo preparado para cifrar emails con Thunderbird. Si no tenemos un par de claves ya generadas, elegiremos la opción de crear nuevas claves.  A continuación se muestra la generación de nuevas claves:
+![generate1]
+Introducimos una contraseña que ayudará a la codificación de nuestras claves. Se puede dejar en blanco, pero esto haría a nuestro par de claves más __débiles__.
+![generate2]
+A continuación se comenzarán a crear nuestras claves. Todos los clicks, movimientos de ratón o acciones que lleve a cabo la máquina aumentará la aleatoriedad de nuestras claves. Enigmail se sirve de estas acciones para generar una semilla más aleatoria.
+![generate3]
+Una vez generado nuestro par de claves, nos preguntará si queremos generar un certificado de revocación. Ésto nos sirve para revocar nuestra clave privada si la perdemos o cae en malas manos. **Es muy recomendable** crear este fichero y guardarlo en un sitio seguro, ya que si cae en malas manos alguien podría utilizarlo para revocar nuestra clave.
+![generateCertif]
+
+Y... ¡ya está! Ya tenemos todo configurado.
 ### Prueba práctica de que funciona
 
 ### Extras: cómo compartir tu clave pública (subirlo a servidores, enviarla a otra gente, anillo de confianza, firmar claves de otra gente...)
 
 [firmaAsimetrica]: img/firmaDigitalAsimetrica.png
+[configEmail1]: img/configEmail.png
+[configEmail2]: img/configEmail2.png
+[configEmail3]: img/configEmail3.png
+[enigmailAsist]: img/enigmailAsist.png
+[generate1]: img/generate.png
+[generate2]: img/generate2.png
+[generate3]: img/generate3.png
+[generateCertif]: img/generateCertif.png
 [1]: https://www.mozilla.org/es-ES/thunderbird/
 [2]: https://www.gnupg.org/

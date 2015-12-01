@@ -61,14 +61,33 @@ Elegimos la opción de usar el asistente. Ahora el asistente nos hará varías p
 Ahora el asistente nos da la opción de usar un par de claves ya generadas o crear unas nuevas. Si ya tenemos un par de claves generadas, las seleccionamso y ya estaría nuestro correo preparado para cifrar emails con Thunderbird. Si no tenemos un par de claves ya generadas, elegiremos la opción de crear nuevas claves.  A continuación se muestra la generación de nuevas claves:
 ![generate1]
 Introducimos una contraseña que ayudará a la codificación de nuestras claves. Se puede dejar en blanco, pero esto haría a nuestro par de claves más __débiles__.
+
 ![generate2]
+
 A continuación se comenzarán a crear nuestras claves. Todos los clicks, movimientos de ratón o acciones que lleve a cabo la máquina aumentará la aleatoriedad de nuestras claves. Enigmail se sirve de estas acciones para generar una semilla más aleatoria.
+
 ![generate3]
+
 Una vez generado nuestro par de claves, nos preguntará si queremos generar un certificado de revocación. Ésto nos sirve para revocar nuestra clave privada si la perdemos o cae en malas manos. **Es muy recomendable** crear este fichero y guardarlo en un sitio seguro, ya que si cae en malas manos alguien podría utilizarlo para revocar nuestra clave.
+
 ![generateCertif]
 
 Y... ¡ya está! Ya tenemos todo configurado.
 ### Prueba práctica de que funciona
+Ahora vamos a enviar un correo de prueba para comprobar que hemos hecho todo bien. Para enviar un correo cifrado simplemente debemos darle al botón de Write / Escribir, introducir el destinatario, asunto y mensaje que queramos enviar. Después, antes de enviar, le damos al botón de Enigmail y seleccionamos El mensaje se cifrará -> Force Encryption (si no hemos seleccionado en el Asistente la opción de cifrar todos nuestros correos). De ésta manera nos aseguramos que el correo se cifrará.
+
+![mail1]
+
+Nos pedirá la contraseña que introducimos a la hora de codificar nuestras claves y después se enviará.
+Ahora, si abrimos ese email desde el navegador, veremos algo así:
+
+![mail2]
+
+Pero si lo abrimos desde Thunderbird...
+
+![mail3]
+
+El cual nos asegura que la firma del remitente es la correcta y nos muestra el mensaje ya decodificado.
 
 ### Extras: cómo compartir tu clave pública (subirlo a servidores, enviarla a otra gente, anillo de confianza, firmar claves de otra gente...)
 
@@ -81,5 +100,8 @@ Y... ¡ya está! Ya tenemos todo configurado.
 [generate2]: img/generate2.png
 [generate3]: img/generate3.png
 [generateCertif]: img/generateCertif.png
+[mail1]: img/mail.png
+[mail2]: img/mail2.png
+[mail3]: img/mail3.png
 [1]: https://www.mozilla.org/es-ES/thunderbird/
 [2]: https://www.gnupg.org/

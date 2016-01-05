@@ -9,20 +9,23 @@ Cifrar un texto (o una imágen digital, que al fin y al cabo es una cadena de "t
 
 ### Cifrado asimétrico GnuPG
 Hay diferentes tipos de cifrado, pero la aplicación que vamos a utilizar [GnuPG][2], que es una implementación libre de GPG para cifrar nuestro correo electrónico que utiliza **Cifrado asimétrico**. ¿Qué es el Cifrado asimétrico? De la wiki:
+
 > "es el método criptográfico que usa **un par de claves** para el envío de mensajes. Las dos claves pertenecen a la misma persona que ha enviado el mensaje. Una clave es **pública y se puede entregar a cualquier persona**, **la otra clave es privada y el propietario debe guardarla de modo que nadie tenga acceso a ella**. Además, los métodos criptográficos garantizan que esa pareja de claves sólo se puede generar una vez, de modo que se puede asumir que no es posible que dos personas hayan obtenido casualmente la misma pareja de claves.
 **Si el remitente usa la clave pública del destinatario para cifrar el mensaje, una vez cifrado, sólo la clave privada del destinatario podrá descifrar este mensaje, ya que es el único que la conoce. Por tanto se logra la confidencialidad del envío del mensaje, nadie salvo el destinatario puede descifrarlo**."
 
 Aquí una imágen bastante descriptiva (a mi juicio) de cómo funciona, también de la Wiki.
 
+![criptografiaAsimetrica]
+
+> - Ana redacta un mensaje
+> - Ana cifra el mensaje con la clave pública de David
+> - Ana envía el mensaje cifrado a David a través de internet, ya sea por correo electrónico, mensajería instantánea o cualquier otro medio
+> - David recibe el mensaje cifrado y lo descifra con su clave privada
+> - David ya puede leer el mensaje original que le mandó Ana
+
+De esta manera protegemos el contenido de nuestro mensaje. Después, si lo firmamos, podemos garantizar que es nuestro.
+
 ![firmaAsimetrica]
-
-> - David redacta un mensaje
-> - David firma digitalmente el mensaje con su clave privada
-> - David envía el mensaje firmado digitalmente a Ana a través de internet, ya sea por correo electrónico, mensajería instantánea o cualquier otro medio
-> - Ana recibe el mensaje firmado digitalmente y comprueba su autenticidad usando la clave pública de David
-> - Ana ya puede leer el mensaje con total seguridad de que ha sido David el remitente
-
-De esta manera protegemos el contenido de nuestro mensaje y también garantizamos que es nuestro.
 
 ## Taller
 ### Instalar Thunderbird / Icedove
@@ -121,6 +124,7 @@ Para firmar la clave pública de otra persona en nuestro nombre, es decir, valid
 - [GPG Cheatsheet][6]
 - [The GNU Privacy Handbook][7]
 
+[criptografiaAsimetrica]: img/CriptografiaAsimetrica.png
 [firmaAsimetrica]: img/firmaDigitalAsimetrica.png
 [configEmail1]: img/configEmail.png
 [configEmail2]: img/configEmail2.png

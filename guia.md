@@ -27,9 +27,17 @@ De esta manera protegemos el contenido de nuestro mensaje. Después, si lo firma
 
 ![firmaAsimetrica]
 
+
+> - David redacta un mensaje
+> - David firma digitalmente el mensaje con su clave privada
+> - David envía el mensaje firmado digitalmente a Ana a través de internet, ya sea por correo electrónico, mensajería instantánea o cualquier otro medio
+> - Ana recibe el mensaje firmado digitalmente y comprueba su autenticidad usando la clave pública de David
+> - Ana ya puede leer el mensaje con total seguridad de que ha sido David el remitente
+
+
 ## Taller
 ### Instalar Thunderbird / Icedove
-Si no se tiene instalado Thunderbird, se puede descargar [aquí][1]. Si utilizamos una distro GNU/Linux simplemente:
+Si no se tiene instalado Thunderbird, se puede descargar [aquí][1]. Si utilizamos Debian o similares simplemente:
 ```shell
   sudo apt-get install icedove
 ```
@@ -58,7 +66,7 @@ En esta ventana seleccionamos IMAP (si queremos que los correos no se descarguen
 ![configEmail3]
 
 
- ya tenemos nuestro correo electrónico configurado.
+Ya tenemos nuestro correo electrónico configurado.
 
 ### Configuración de Enigmail
 Enigmail nos facilita un asistente para la configuración de este. Menu -> Enigmail -> Asistente de configuración.
@@ -123,6 +131,9 @@ Para firmar la clave pública de otra persona en nuestro nombre, es decir, valid
 - [Validar otras claves (más extenso)][5]
 - [GPG Cheatsheet][6]
 - [The GNU Privacy Handbook][7]
+- [Cifrar el correo electrónico con GPG | Elbinario.net][8]
+
+![cc]
 
 [criptografiaAsimetrica]: img/CriptografiaAsimetrica.png
 [firmaAsimetrica]: img/firmaDigitalAsimetrica.png
@@ -137,6 +148,7 @@ Para firmar la clave pública de otra persona en nuestro nombre, es decir, valid
 [mail1]: img/mail.png
 [mail2]: img/mail2.png
 [mail3]: img/mail3.png
+[cc]: img/cc.png
 [1]: https://www.mozilla.org/es-ES/thunderbird/
 [2]: https://www.gnupg.org/
 [3]: http://www.rediris.es/servicios/keyserver/requisitos.html
@@ -144,3 +156,4 @@ Para firmar la clave pública de otra persona en nuestro nombre, es decir, valid
 [5]: https://www.gnupg.org/gph/es/manual/x354.html
 [6]: http://irtfweb.ifa.hawaii.edu/~lockhart/gpg/
 [7]: https://www.gnupg.org/gph/es/manual.html
+[8]: http://elbinario.net/2014/03/20/cifrar-el-correo-electronico-con-gpg/
